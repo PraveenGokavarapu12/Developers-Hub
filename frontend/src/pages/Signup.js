@@ -38,7 +38,7 @@ const Signup = () => {
       });
       if (response.data) {
         localStorage.setItem('token', response.data);
-        navigate('/dashboard');
+        navigate('/');
         
         // Redirect or show success message
         
