@@ -3,13 +3,17 @@ const app=express();
 const cors=require('cors')
 const dotenv=require('dotenv').config()
 const useRoutes=require('./routes/userRoute')
-const review=require('./routes/reviewsRoute')
+const postRoutes=require('./routes/postsRoute')
+
 const connectDB=require('./config/dBConfig');
 const errorHandler = require('./middleware/errorHandler');
 connectDB();
 
 
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:3004',  // Allow frontend
+    credentials: true                 // Allow cookies if needed
+}));
 app.use(express.json())
 
 
@@ -18,7 +22,7 @@ const port=process.env.PORT || 5001
 
 
 app.use('/api/users',useRoutes)
-app.use('/api/reviews',review)
+app.use('/api/posts',postRoutes)
 app.use(errorHandler)
 
 
