@@ -7,6 +7,7 @@ import { MdVerified } from 'react-icons/md';
 const MyPosts = () => {
   const [data, setData] = useState([]);
   const [likedPosts, setLikedPosts] = useState({});
+  const [loading,setLoading]=useState(false);
 
   const toggleLike = (postId) => {
     setLikedPosts((prev) => ({
@@ -26,8 +27,9 @@ const MyPosts = () => {
 
   useEffect(() => {
     const fetch = async () => {
+      setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:3005/api/posts`, {
+        const res = await axios.get(`https://lancer-app-praveen.onrender.com/api/posts`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -37,6 +39,9 @@ const MyPosts = () => {
       } catch (error) {
         console.error('Error fetching data:', error);
       }
+      finally{
+        setLoading(false);
+      }
     };
     fetch();
   },[]);
@@ -44,7 +49,12 @@ const MyPosts = () => {
    
   
     <div className='flex flex-col justify-start items-center p-4 min-w-full'>
-     {data.length!==0 ?  
+       {loading ? (
+        <div className='flex items-center justify-center min-h-screen'>
+          <div className='loader text-lg text-blue-600'>Loading... Just a Sec!</div>
+        </div>
+      ) :
+     (data.length!==0 ?  
       (<div  className='m-2 p-2 rounded-lg w-3/4'>
         {data.map((post) => (
                     <div key={post._id}>
@@ -96,7 +106,7 @@ const MyPosts = () => {
         
                   ))}
                   
-      </div>):<p>No posts Yet</p>}
+      </div>):<p>No posts Yet</p>)}
 
       
     </div>

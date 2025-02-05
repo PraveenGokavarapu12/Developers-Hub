@@ -6,20 +6,27 @@ import { FaTrash } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 const MyPosts = (id) => {
   const navigate=useNavigate();
-  const [data, setData] = useState([]); // Initialize with null to handle loading state
+  const [data, setData] = useState([]);
+   // Initialize with null to handle loading state
+   const [loading,setLoading]=useState(false);
   const deletePost=async(id)=>{
     try{
-      const res=await axios.delete(`http://localhost:3005/api/posts/${id}`,{
+      setLoading(true);
+      const res=await axios.delete(`https://lancer-app-praveen.onrender.com/api/posts/${id}`,{
         headers:{
           Authorization:`Bearer ${localStorage.getItem('token')}`
         }
       })
       console.log(res.data);
+    
       setData(data.filter(post=>post._id!=id));
     }
     catch(err){
       console.error(err);
 
+    }
+    finally {
+      setLoading(false);
     }
 
   }
@@ -27,16 +34,21 @@ const MyPosts = (id) => {
 
   useEffect(() => {
     const fetch = async () => {
+      setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:3005/api/posts/myposts`, {
+        const res = await axios.get(`https://lancer-app-praveen.onrender.com/api/posts/myposts`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
         });
         setData(res.data);
         console.log(res.data)
+        
       } catch (error) {
         console.error('Error fetching data:', error);
+      }
+      finally {
+        setLoading(false);
       }
     };
     fetch();
@@ -45,7 +57,12 @@ const MyPosts = (id) => {
    
   
     <div className='flex flex-col justify-start items-center p-4 min-w-full'>
-     {data.length!==0 ?  
+      {loading ? (
+        <div className='flex items-center justify-center min-h-screen'>
+          <div className='loader text-lg text-blue-500'>Loading... Just a Sec!</div>
+        </div>
+      ) :
+     (data.length!==0 ?  
       (<div  className='m-2 p-2 rounded-lg w-3/4'>
         {data.map((post) => (
                     <div key={post._id}>
@@ -60,7 +77,7 @@ const MyPosts = (id) => {
         
                   ))}
                   <button className='bg-blue-600 text-white p-2 m-1 rounded-lg' onClick={()=>navigate('/createpost')}>New Post +</button>
-      </div>):<p>No posts Yet</p>}
+      </div>):<p>No posts Yet</p>)}
 
       
     </div>

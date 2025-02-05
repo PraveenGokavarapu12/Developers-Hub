@@ -33,7 +33,7 @@ const Signup = () => {
 
       const { passwordConfirm, ...dataToSend } = formData;
       console.log(dataToSend);
-      const response = await axios.post('http://localhost:3005/api/users/register', dataToSend, {
+      const response = await axios.post('https://lancer-app-praveen.onrender.com/api/users/register', dataToSend, {
         headers: { 'Content-Type': 'application/json' },
       });
       if (response.data) {

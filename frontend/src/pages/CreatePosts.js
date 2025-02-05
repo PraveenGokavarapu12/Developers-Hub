@@ -13,7 +13,7 @@ const CreatePosts = () => {
     else{
       const fetch = async () => {
         try {
-          const res = await axios.post(`http://localhost:3005/api/posts`,{content}, {
+          const res = await axios.post(`https://lancer-app-praveen.onrender.com/api/posts`,{content}, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`
             }

@@ -22,7 +22,7 @@ const Signup = () => {
             return;
         }
         try{
-            const response=await axios.post('http://localhost:3005/api/users/login',formData)
+            const response=await axios.post('https://lancer-app-praveen.onrender.com/api/users/login',formData)
             if(response.data){
                 
                 localStorage.setItem('token',response.data)

@@ -16,7 +16,7 @@ const Dashboard = () => {
     const fetch = async () => {
       setLoading(true);
       try {
-        const res = await axios.get('http://localhost:3005/api/users/dashboard', {
+        const res = await axios.get('https://lancer-app-praveen.onrender.com/api/users/dashboard', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
@@ -58,7 +58,7 @@ const Dashboard = () => {
       <div className='w-full flex flex-col items-center justify-center'>
       {loading ? (
         <div className='flex items-center justify-center min-h-screen'>
-          <div className='loader'></div>
+          <div className='loader text-lg text-blue-600'>Loading... Just a Sec!</div>
         </div>
       ) : (
         filteredData.length > 0 ? (
