@@ -17,8 +17,8 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         {!token ? <ul className="hidden md:flex space-x-6 text-white">
-          <li><a href="/signup" className="hover:text-gray-200">Sign Up</a></li>
-          <li><a href="/login" className="hover:text-gray-200">Login</a></li>
+          <li onClick={()=>navigate('/signup')} className="hover:text-gray-200  cursor-pointer" >Signup</li>
+          <li onClick={()=>navigate('/login')} className="hover:text-gray-200 cursor-pointer" >Login</li>
          
         </ul> : <ul className="hidden md:flex space-x-6 text-white">
          
@@ -27,7 +27,7 @@ const Navbar = () => {
           <li onClick={()=>navigate('/likedposts')} className="hover:text-gray-200 cursor-pointer" >Liked Posts</li>
           <li onClick={()=>navigate('/dashboard')} className="hover:text-gray-200 cursor-pointer" >Developers</li>
           <li My onClick={()=>navigate('/myposts')} className="hover:text-gray-200 cursor-pointer"> My Posts</li>
-          <li className="hover:text-red-600" onClick={onCLickLogout}>Logout</li>
+          <li className="hover:text-red-600 cursor-pointer" onClick={onCLickLogout}>Logout</li>
           
         </ul>}
        
@@ -46,17 +46,17 @@ const Navbar = () => {
   <ul className="md:hidden text-white text-center p-4 space-y-2">
     {!token ? (
       <>
-        <li><a href="#" className="hover:text-gray-200">Sign Up</a></li>
-        <li><a href="#" className="hover:text-gray-200">Login</a></li>
+        <li onClick={()=>navigate('/signup')} className="hover:text-gray-200  cursor-pointer" >Signup</li>
+        <li onClick={()=>navigate('/login')} className="hover:text-gray-200 cursor-pointer" >Login</li>
       </>
     ) : (
       <>
-       <li><a href="#" className="hover:text-gray-200" >Home</a></li>
-          <li><a href="#" className="hover:text-gray-200" >Create Post</a></li>
-          <li><a href="#" className="hover:text-gray-200" >Liked Posts</a></li>
-          <li><a href="#" className="hover:text-gray-200" >Developers</a></li>
-          <li><a href="#" className="hover:text-gray-200" ></a>My Posts</li>
-          <li><a href="#" className="hover:text-red-600" onClick={onCLickLogout}>Logout</a></li>
+         <li onClick={()=>navigate('/posts')} className="hover:text-gray-200  cursor-pointer" >Home</li>
+          <li onClick={()=>navigate('/createpost')} className="hover:text-gray-200 cursor-pointer" >Create Post</li>
+          <li onClick={()=>navigate('/likedposts')} className="hover:text-gray-200 cursor-pointer" >Liked Posts</li>
+          <li onClick={()=>navigate('/dashboard')} className="hover:text-gray-200 cursor-pointer" >Developers</li>
+          <li My onClick={()=>navigate('/myposts')} className="hover:text-gray-200 cursor-pointer"> My Posts</li>
+          <li className="hover:text-red-600" onClick={onCLickLogout}>Logout</li>
          
       </>
       
