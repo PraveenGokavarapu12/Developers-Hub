@@ -11,7 +11,7 @@ connectDB();
 
 
 app.use(cors({
-    origin: 'http://localhost:3004',  // Allow frontend
+    origin: 'https://developers-hub-praveen.vercel.app',  // Allow frontend
     credentials: true                 // Allow cookies if needed
 }));
 app.use(express.json())
