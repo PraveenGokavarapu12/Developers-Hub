@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
 const CreatePosts = () => {
   const navigate=useNavigate()
   const [content,setContent]=useState('')
@@ -33,14 +36,10 @@ const CreatePosts = () => {
     
   }
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg m-5">
-  <textarea
-    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-    rows="7"
-    placeholder="Write something here..."
-    onChange={(e)=>{setContent(e.target.value)}}
-  ></textarea>
-  <button className="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-200" onClick={onPost}>
+    <div className="max-w-lg mx-auto p-6 bg-white  rounded-lg m-5 h-auto">
+     <ReactQuill value={content} onChange={setContent} className='h-60 m-2' />
+  
+  <button className="mt-20 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-200" onClick={onPost}>
     Post
   </button>
 </div>

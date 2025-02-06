@@ -62,7 +62,7 @@ const UserDetails = () => {
           <h1 className='font-extrabold text-blue-500'>Posts</h1>
           {data.posts.map((post) => (
             <div key={post._id} className=' m-2 p-2 rounded-lg'>
-              <p>{post.content}</p>
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
               <p className="text-gray-500 text-sm">{moment(post.createdAt).fromNow()}</p>
               <hr className="border-t-2 border-blue-500 my-6 w-3/4 " />
 

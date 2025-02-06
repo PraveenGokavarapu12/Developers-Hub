@@ -10,8 +10,9 @@ const MyPosts = (id) => {
    // Initialize with null to handle loading state
    const [loading,setLoading]=useState(false);
   const deletePost=async(id)=>{
+    setData(data.filter(post=>post._id!=id));
     try{
-      setLoading(true);
+     
       const res=await axios.delete(`https://lancer-app-praveen.onrender.com/api/posts/${id}`,{
         headers:{
           Authorization:`Bearer ${localStorage.getItem('token')}`
@@ -19,7 +20,7 @@ const MyPosts = (id) => {
       })
       console.log(res.data);
     
-      setData(data.filter(post=>post._id!=id));
+     
     }
     catch(err){
       console.error(err);
@@ -66,7 +67,7 @@ const MyPosts = (id) => {
       (<div  className='m-2 p-2 rounded-lg w-3/4'>
         {data.map((post) => (
                     <div key={post._id}>
-                      <p>{post.content}</p>
+                       <div dangerouslySetInnerHTML={{ __html: post.content }} />
                       <p className="text-gray-500 text-sm">{moment(post.createdAt).fromNow()}</p>
                       <FaTrash className='cursor-pointer text-blue-600 m-1' onClick={()=>{deletePost(post._id)}}/>
                       <hr className="border-t-2 border-blue-500 my-6 w-3/4 " />
