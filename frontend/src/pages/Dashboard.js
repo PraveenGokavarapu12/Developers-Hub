@@ -41,7 +41,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-start min-h-screen bg-blue-50'>
+    <div className='flex flex-col items-center justify-start min-h-screen bg-blue-50 mt-16'>
       <div className='flex items-center justify-center w-full md:w-2/4 m-3'>
         <input
           type='text'
