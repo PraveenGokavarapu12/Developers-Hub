@@ -10,7 +10,7 @@ const Navbar = () => {
     navigate('/login')
   }
   return (
-    <nav className=" p-4 bg-gradient-to-r from-indigo-500 to-blue-500 text-white">
+    <nav className=" p-4 bg-gradient-to-r from-indigo-500 to-blue-500 text-white top-0 fixed z-50 left-0">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="text-white text-xl font-bold">Developers Hub</a>
