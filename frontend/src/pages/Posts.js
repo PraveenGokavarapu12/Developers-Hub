@@ -76,15 +76,16 @@ const MyPosts = () => {
                     <MdVerified />
                   </div>
                   <h2 className="font-normal">{post.user_id.email}</h2>
+                     
+              <p className="text-gray-500 text-sm m-1">{moment(post.createdAt).fromNow()}</p>
+
                 </div>
               </div>
 
               {/* Post Content */}
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
 
-              {/* Time Ago */}
-              <p className="text-gray-500 text-sm">{moment(post.createdAt).fromNow()}</p>
-
+            
               {/* Like & Dislike Buttons */}
               <div className="flex space-x-3">
                 <button onClick={() => toggleLike(post._id)}>
