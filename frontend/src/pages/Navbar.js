@@ -43,7 +43,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-  <ul className="md:hidden text-white text-center p-4 space-y-2">
+  <ul className="md:hidden text-white text-center p-4 space-y-2 " onClick={() => setIsOpen(!isOpen)}>
     {!token ? (
       <>
         <li onClick={()=>navigate('/signup')} className="hover:text-gray-200  cursor-pointer" >Signup</li>

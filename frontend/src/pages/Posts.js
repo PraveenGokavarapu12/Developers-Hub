@@ -58,26 +58,30 @@ const MyPosts = () => {
   };
 
   return (
-    <div className="flex flex-col justify-start items-center p-4 min-w-full mt-16">
+    <div className="flex flex-col justify-start items-center p-4 w-full mt-16">
+      
+     
+         
       {loading ? (
         <div className="flex items-center justify-center min-h-screen">
           <div className="loader text-lg text-blue-600">Loading... Just a Sec!</div>
         </div>
       ) : data.length !== 0 ? (
-        <div className="m-2 p-2 rounded-lg w-3/4">
-          {data.map((post) => (
+        <div className="m-2 p-2 rounded-lg w-full md:w-3/4">
+           <h1 className="text-xl font-bold text-blue-800 m-2 self-left">Recent Posts</h1>
+           {data.map((post) => (
             <div key={post._id}>
               {/* User Info */}
               <div className="flex items-center">
-                <FaUser className="text-3xl sm:text-5xl text-slate-500 bg-slate-100 p-3 rounded-full ml-5 m-5" />
+                <FaUser className="text-3xl sm:text-5xl text-slate-500 bg-slate-100 p-2 md:p-3 rounded-full ml-5 m-5" />
                 <div className="mx-2 font-bold text-blue-900 w-full md:w-2/6 p-2 rounded-lg">
                   <div className="flex items-center space-x-1">
                     <h1 className="text-center md:text-left">{post.user_id.name}</h1>
                     <MdVerified />
                   </div>
-                  <h2 className="font-normal">{post.user_id.email}</h2>
+                  <h2 className="font-normal text-xs md:text-sm">{post.user_id.email}</h2>
                      
-              <p className="text-gray-500 text-sm m-1">{moment(post.createdAt).fromNow()}</p>
+              <p className="text-gray-500 text-xs">{moment(post.createdAt).fromNow()}</p>
 
                 </div>
               </div>
