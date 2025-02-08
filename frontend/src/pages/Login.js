@@ -37,10 +37,10 @@ const Signup = () => {
     }
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-blue-50'>
+    <div className='flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-[#251841] to-black text-white"'>
         {error && <div className='text-red-500'>{error}</div>}
-      <form  autoComplete="off" onSubmit={onSubmitHandler} className='flex flex-col bg-white p-10 rounded-md shadow-md space-y-2 max-w-md sm:w-3/5 lg:w-2/6'>
-        <h1 className='font-bold text-center'>Login</h1>
+      <form  autoComplete="off" onSubmit={onSubmitHandler} className='flex flex-col bg-indigo-900 p-10 rounded-md shadow-md space-y-2 max-w-md sm:w-3/5 lg:w-2/6'>
+        <h1 className='font-bold text-center text-white'>Login</h1>
        
       
         <input
@@ -63,9 +63,9 @@ const Signup = () => {
           className='p-2 rounded border'
         />
         
-        <button type="submit" className='bg-gradient-to-r from-indigo-500 to-blue-500 text-white p-2 rounded'>Login</button>
+        <button type="submit" className='bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-600 hover:to-blue-600 p-2 rounded text-white'>Login</button>
       </form>
-      <p>Don't have an account?  <span onClick={()=>navigate('/signup')} className='text-blue-600 cursor-pointer'>Signup</span></p>
+      <p className='text-white'>Don't have an account?  <span onClick={()=>navigate('/signup')} className='text-blue-600 cursor-pointer'>Signup</span></p>
     </div>
   );
 };

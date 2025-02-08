@@ -36,10 +36,10 @@ const UserDetails = () => {
   }
 
   return (
-    <div className='flex flex-col items-center justify-start min-h-screen  px-4 bg-blue-50 mt-16'>
+    <div className='flex flex-col items-center justify-start min-h-screen  px-4 bg-gradient-to-r from-[#251841] to-black text-white mt-15 pt-12'>
       <div className=' w-full sm:w-3/4 h-auto m-3 p-5 sm:p-10 rounded-lg flex flex-col sm:flex-row items-center'>
         <FaUser className='text-6xl sm:text-9xl text-slate-500 bg-slate-100 p-3 rounded-full mb-4 sm:mb-0 sm:ml-5 sm:m-5' />
-        <div className='mx-2 font-bold text-purple-950 w-full sm:w-2/6 text-center sm:text-left'>
+        <div className='mx-2 font-bold w-full sm:w-2/6 text-center sm:text-left'>
           <h1>{data.user.name}</h1>
           <h2 className='font-normal'>Email: {data.user.email}</h2>
           <ul className='list-disc list-inside'>

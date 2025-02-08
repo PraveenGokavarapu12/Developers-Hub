@@ -49,8 +49,8 @@ const Signup = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-blue-50'>
-      <form onSubmit={onSubmitHandler} autoComplete="off" className='flex flex-col bg-white p-10 rounded-md shadow-md space-y-3 max-w-md sm:w-3/5 lg:w-2/6'>
+    <div className='flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-[#251841] to-black text-white'>
+      <form onSubmit={onSubmitHandler} autoComplete="off" className='flex flex-col bg-indigo-900 p-10 rounded-md shadow-md space-y-3 max-w-md sm:w-3/5 lg:w-2/6'>
         <h1 className='font-bold text-center'>Sign Up</h1>
         {error && <div className='text-red-500'>{error}</div>}
         <input
@@ -95,7 +95,7 @@ const Signup = () => {
           placeholder="Confirm Password"
           className='p-2 rounded border'
         />
-        <button type="submit" className='bg-gradient-to-r from-indigo-500 to-blue-500 text-white p-2 rounded'>Sign Up</button>
+        <button type="submit" className='bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-600 hover:to-blue-600 p-2 rounded text-white'>Sign Up</button>
       </form>
     </div>
   );

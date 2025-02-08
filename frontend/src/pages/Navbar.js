@@ -10,7 +10,7 @@ const Navbar = () => {
     navigate('/login')
   }
   return (
-    <nav className=" p-4 bg-gradient-to-r from-indigo-500 to-blue-500 text-white top-0 fixed z-50 left-0 w-full mb-8">
+    <nav className=" p-4 bg-gradient-to-r from-indigo-700 to-[#230e4d] text-white top-0 fixed z-50 left-0 w-full mb-10">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="text-white text-xl font-bold">Developers Hub</a>
@@ -24,7 +24,7 @@ const Navbar = () => {
          
           <li onClick={()=>navigate('/posts')} className="hover:text-gray-200  cursor-pointer" >Home</li>
           <li onClick={()=>navigate('/createpost')} className="hover:text-gray-200 cursor-pointer" >Create Post</li>
-          <li onClick={()=>navigate('/likedposts')} className="hover:text-gray-200 cursor-pointer" >Liked Posts</li>
+        
           <li onClick={()=>navigate('/dashboard')} className="hover:text-gray-200 cursor-pointer" >Developers</li>
           <li My onClick={()=>navigate('/myposts')} className="hover:text-gray-200 cursor-pointer"> My Posts</li>
           <li className="hover:text-red-600 cursor-pointer" onClick={onCLickLogout}>Logout</li>
@@ -53,7 +53,7 @@ const Navbar = () => {
       <>
          <li onClick={()=>navigate('/posts')} className="hover:text-gray-200  cursor-pointer" >Home</li>
           <li onClick={()=>navigate('/createpost')} className="hover:text-gray-200 cursor-pointer" >Create Post</li>
-          <li onClick={()=>navigate('/likedposts')} className="hover:text-gray-200 cursor-pointer" >Liked Posts</li>
+          
           <li onClick={()=>navigate('/dashboard')} className="hover:text-gray-200 cursor-pointer" >Developers</li>
           <li My onClick={()=>navigate('/myposts')} className="hover:text-gray-200 cursor-pointer"> My Posts</li>
           <li className="hover:text-red-600" onClick={onCLickLogout}>Logout</li>

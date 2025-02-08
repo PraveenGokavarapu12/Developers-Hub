@@ -36,13 +36,15 @@ const CreatePosts = () => {
     
   }
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white  rounded-lg m-5 h-auto mt-16">
-     <ReactQuill value={content} onChange={setContent} className='h-60 m-2' />
+   <div className='flex justify-center items-center bg-gradient-to-r from-[#251841] to-black text-white mt-15 min-h-screen'>
+     <div className="max-w-lg mx-auto p-6  rounded-lg m-5 h-auto mt-16 md:w-2/3">
+     <ReactQuill value={content} onChange={setContent} className='h-80  m-2 text-white' />
   
-  <button className="mt-20 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-200" onClick={onPost}>
+  <button className="mt-20 w-full bg-indigo-700 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-200" onClick={onPost}>
     Post
   </button>
 </div>
+   </div>
   )
 }
 

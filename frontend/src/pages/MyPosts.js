@@ -57,7 +57,7 @@ const MyPosts = (id) => {
   return (
    
   
-    <div className='flex flex-col justify-start items-center p-4 min-w-full mt-16'>
+    <div className='flex flex-col justify-start items-center p-4 min-w-full mt-15 bg-gradient-to-r from-[#251841] to-black text-white pt-12'>
       {loading ? (
         <div className='flex items-center justify-center min-h-screen'>
           <div className='loader text-lg text-blue-500'>Loading... Just a Sec!</div>

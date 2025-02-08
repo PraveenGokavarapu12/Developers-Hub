@@ -58,23 +58,23 @@ const MyPosts = () => {
   };
 
   return (
-    <div className="flex flex-col justify-start items-center p-4 w-full mt-16">
+    <div className="flex flex-col justify-start items-center pt-12 p-4 w-full mt-15 bg-gradient-to-r from-[#251841] to-black text-white">
       
      
          
       {loading ? (
         <div className="flex items-center justify-center min-h-screen">
-          <div className="loader text-lg text-blue-600">Loading... Just a Sec!</div>
+          <div className="loader text-lg text-blue-400">Loading... Just a Sec!</div>
         </div>
       ) : data.length !== 0 ? (
         <div className="m-2 p-2 rounded-lg w-full md:w-3/4">
-           <h1 className="text-xl font-bold text-blue-800 m-2 self-left">Recent Posts</h1>
+           <h1 className="text-xl font-bold text-blue-400 m-2 self-left">Recent Posts</h1>
            {data.map((post) => (
             <div key={post._id}>
               {/* User Info */}
               <div className="flex items-center">
                 <FaUser className="text-3xl sm:text-5xl text-slate-500 bg-slate-100 p-2 md:p-3 rounded-full ml-5 m-5" />
-                <div className="mx-2 font-bold text-blue-900 w-full md:w-2/6 p-2 rounded-lg">
+                <div className="mx-2 font-bold text-blue-400 w-full md:w-2/6 p-2 rounded-lg">
                   <div className="flex items-center space-x-1">
                     <h1 className="text-center md:text-left">{post.user_id.name}</h1>
                     <MdVerified />
