@@ -10,10 +10,12 @@ const LandingPage = () => {
 
   return (
     <div className="relative flex flex-col md:flex-row justify-center items-center px-6 py-12 w-full bg-gradient-to-r from-[#251841] to-black text-white min-h-screen overflow-hidden font-mono">
+           {/* Floating Purple Ball (Directly on Cursor) */}
+           <div className="absolute top-1/3 left-5 w-40 h-40 bg-purple-500 rounded-full opacity-50 blur-3xl animate-floatingBall"></div>
       {/* Left Content */}
       <div className="w-full md:w-1/2 text-center md:text-left px-4">
         <h2 className="text-2xl md:text-5xl font-extrabold leading-tight">
-          Join the <span className="text-blue-400">Ultimate Developers Hub</span>
+          Join the Ultimate <span className="text-blue-400">Developers Hub</span>
         </h2>
 
         {/* Typing Effect */}
