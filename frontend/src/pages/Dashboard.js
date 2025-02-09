@@ -41,7 +41,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-start min-h-screen bg-gradient-to-r from-[#251841] to-black text-slate-300 mt-15 pt-12'>
+    <div className='flex flex-col items-center justify-start min-h-screen font-mono bg-gradient-to-r from-[#251841] to-black text-slate-300 mt-15 pt-12'>
       <div className='flex items-center justify-center w-full md:w-2/4 m-3'>
         <input
           type='text'
