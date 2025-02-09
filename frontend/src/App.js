@@ -10,6 +10,7 @@ import MyPosts from './pages/MyPosts'
 import LikedPosts from './pages/LikedPosts'
 import CreatePosts from './pages/CreatePosts'
 import Posts from './pages/Posts'
+import LandingPage from './pages/LandingPage'
 const App = () => {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ const App = () => {
       <Route path="/" element={<Navigate to="/posts" />} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path='/landingpage' element={<LandingPage/>}/>
         <Route element={<PrivateRoute/>}>
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/user/:id" element={<UserDetails/>} />

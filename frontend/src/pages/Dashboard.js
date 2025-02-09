@@ -41,7 +41,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-start min-h-screen bg-gradient-to-r from-[#251841] to-black text-white mt-15 pt-12'>
+    <div className='flex flex-col items-center justify-start min-h-screen bg-gradient-to-r from-[#251841] to-black text-slate-300 mt-15 pt-12'>
       <div className='flex items-center justify-center w-full md:w-2/4 m-3'>
         <input
           type='text'
@@ -66,7 +66,7 @@ const Dashboard = () => {
             <div
             onClick={() => navigate(`/user/${user._id}`) }
               key={user._id}
-              className='bg-gradient-to-r from-indigo-900 to-[#230e4d] text-white w-5/6 md:w-3/4 h-auto m-3 p-5 rounded-lg flex flex-col md:flex-row items-center cursor-pointer hover:shadow-lg hover:shadow-purple-900 transition duration-200 ease-in-out '
+              className='bg-gradient-to-r from-[#382252] to-[#2c125d] text-slate-400 w-5/6 md:w-3/4 h-auto m-3 p-5 rounded-lg flex flex-col md:flex-row items-center cursor-pointer hover:shadow-lg hover:shadow-indigo-900 transition duration-200 ease-in-out '
             >
               <FaUser className='text-6xl sm:text-9xl text-slate-500 bg-slate-100 p-3 rounded-full ml-5 m-5' />
               <div className='mx-2 font-bold text-white w-full md:w-2/6 p-2 rounded-lg'>

@@ -58,7 +58,7 @@ const MyPosts = () => {
   };
 
   return (
-    <div className="flex flex-col justify-start items-center pt-12 p-4 w-full mt-15 bg-gradient-to-r from-[#251841] to-black text-white">
+    <div className="flex flex-col justify-start items-center pt-12 p-4 w-full mt-15 bg-gradient-to-r from-[#090610] to-[#251841] text-slate-300">
       
      
          
@@ -68,13 +68,13 @@ const MyPosts = () => {
         </div>
       ) : data.length !== 0 ? (
         <div className="m-2 p-2 rounded-lg w-full md:w-3/4">
-           <h1 className="text-xl font-bold text-blue-400 m-2 self-left">Recent Posts</h1>
+           <h1 className="text-xl font-bold text-blue-300 m-2 self-left">Recent Posts</h1>
            {data.map((post) => (
             <div key={post._id}>
               {/* User Info */}
               <div className="flex items-center">
                 <FaUser className="text-3xl sm:text-5xl text-slate-500 bg-slate-100 p-2 md:p-3 rounded-full ml-5 m-5" />
-                <div className="mx-2 font-bold text-blue-400 w-full md:w-2/6 p-2 rounded-lg">
+                <div className="mx-2 font-bold text-blue-300 w-full md:w-2/6 p-2 rounded-lg">
                   <div className="flex items-center space-x-1">
                     <h1 className="text-center md:text-left">{post.user_id.name}</h1>
                     <MdVerified />
@@ -94,22 +94,22 @@ const MyPosts = () => {
               <div className="flex space-x-3">
                 <button onClick={() => toggleLike(post._id)}>
                   {likedPosts[post._id] ? (
-                    <FaThumbsUp className="m-2 text-blue-500 cursor-pointer" />
+                    <FaThumbsUp className="m-2 text-blue-300 cursor-pointer" />
                   ) : (
-                    <FaRegThumbsUp className="m-2 text-blue-500 cursor-pointer" />
+                    <FaRegThumbsUp className="m-2 text-blue-300 cursor-pointer" />
                   )}
                 </button>
 
                 <button onClick={() => toggleDislike(post._id)}>
                   {dislikedPosts[post._id] ? (
-                    <FaThumbsDown className="m-2 text-blue-500 cursor-pointer" />
+                    <FaThumbsDown className="m-2 text-blue-300 cursor-pointer" />
                   ) : (
-                    <FaRegThumbsDown className="m-2 text-blue-500 cursor-pointer" />
+                    <FaRegThumbsDown className="m-2 text-blue-300 cursor-pointer" />
                   )}
                 </button>
               </div>
 
-              <hr className="border-t-2 border-blue-500 my-6 w-full" />
+              <hr className="border-t-2 border-blue-300 my-6 w-full" />
             </div>
           ))}
         </div>

@@ -63,7 +63,7 @@ const Signup = () => {
           className='p-2 rounded border'
         />
         
-        <button type="submit" className='bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-600 hover:to-blue-600 p-2 rounded text-white'>Login</button>
+        <button type="submit" className='bg-gradient-to-r from-indigo-400 to-blue-500 hover:from-indigo-600 hover:to-blue-600 p-2 rounded text-white'>Login</button>
       </form>
       <p className='text-white'>Don't have an account?  <span onClick={()=>navigate('/signup')} className='text-blue-600 cursor-pointer'>Signup</span></p>
     </div>
