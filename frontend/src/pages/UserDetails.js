@@ -5,22 +5,26 @@ import axios from 'axios';
 import { FaUser } from 'react-icons/fa';
 
 import moment from 'moment'
+import ChatComponent from '../components/ChatComponent';
 
 
 const UserDetails = () => {
   const { id } = useParams();
   const [data, setData] = useState(null); // Initialize with null to handle loading state
+  const [chatOpen, setChatOpen] = useState(false);
 
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get(`https://lancer-app-praveen.onrender.com/api/users/developer/${id}`, {
+        const res = await axios.get(`http://localhost:3005/api/users/developer/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
         });
         setData(res.data);
-        console.log(res.data)
+        console.log(res.data.loggedInUser._id);
+        console.log(res.data.user._id);
+
 
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -53,25 +57,21 @@ const UserDetails = () => {
           className='flex items-center  mt-2 md:mt-0 bg-purple-900 text-white p-1 rounded-lg cursor-pointer bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600'
 
         >
-          <p className='mr-2'>Message</p>
+          <p className='mr-2' onClick={() => setChatOpen(true)}>Message</p>
 
         </div>
       </div>
-      {data.posts.length !== 0 ?
-        <div className='flex flex-col w-3/4 justify-start'>
-          <h1 className='font-extrabold text-blue-500'>Posts</h1>
-          {data.posts.map((post) => (
-            <div key={post._id} className=' m-2 p-2 rounded-lg'>
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-              <p className="text-gray-500 text-sm">{moment(post.createdAt).fromNow()}</p>
-              <hr className="border-t-2 border-blue-500 my-6 w-3/4 " />
+      {chatOpen && (
+        <ChatComponent
+          senderId={data.loggedInUser._id} // Replace with logged-in user ID
+          receiverId={data.user._id}
+          closeChat={() => setChatOpen(false)
 
-            </div>
-
-
-
-          ))}
-        </div> : <p>No Posts Yet!</p>}
+          }
+          receiverName={data.user.name}
+        />
+      )}
+      
     </div>
   );
 };

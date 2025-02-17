@@ -65,6 +65,8 @@ const MyPosts = (id) => {
       ) :
      (data.length!==0 ?  
       (<div  className='m-2 p-2 rounded-lg w-3/4'>
+           <button className='bg-blue-600 text-white p-2 m-3 rounded-lg' onClick={()=>navigate('/createpost')}>New Post +</button>
+           <h1 className="text-xl font-bold text-blue-300 m-2 self-left">My Posts</h1>
         {data.map((post) => (
                     <div key={post._id}>
                        <div dangerouslySetInnerHTML={{ __html: post.content }} />

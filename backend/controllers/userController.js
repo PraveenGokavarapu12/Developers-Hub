@@ -86,9 +86,9 @@ const dashboard = asyncHandler(async (req, res) => {
 const developerDetails = asyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id)
         .select("-password")
-    const posts=await Post.find({user_id:req.params.id})
+   
     if (user) {
-        res.json({user,posts});
+        res.json({user,loggedInUser:req.user});
     } else {
         res.status(404);
         throw new Error("User not found");
@@ -102,14 +102,14 @@ const developerDetails = asyncHandler(async (req, res) => {
 const likepost=asyncHandler(async(req,res)=>{
     const user=await User.findById(req.user._id)
     if(user.likedPosts.includes(req.params.id)){
-        await User.findByIdAndUpdate(req.params.id,{
-            $pull:{likes:req.params.id}
+        await User.findByIdAndUpdate(req.user._id,{
+            $pull:{likedPosts:req.params.id}
         })
         res.json("Post unliked")
     }
     else{
-        await User.findByIdAndUpdate(req.params.id,{
-            $push:{likes:req.params.id}
+        await User.findByIdAndUpdate(req.user._id,{
+            $push:{likedPosts:req.params.id}
         })
         res.json("Post liked")
 
@@ -121,10 +121,20 @@ const likepost=asyncHandler(async(req,res)=>{
 //get all liked Posts
 //GET /api/users/likedposts
 const likedPosts=asyncHandler(async(req,res)=>{
-    const user=await User.findById(req.user._id).populate("posts")
-
-    res.json(user.posts)
-})
+   
+        const user = await User.findById(req.user._id)
+            .populate("likedPosts","content _id")  // Populate liked posts with full details
+            .select("-password");     // Exclude password
+    
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+    
+        res.json(user);
+    });
+    
+  
+    
 
 
 

@@ -24,7 +24,7 @@ const Navbar = () => {
          
           <li onClick={()=>navigate('/posts')} className="hover:text-gray-200  cursor-pointer" >Home</li>
           <li onClick={()=>navigate('/createpost')} className="hover:text-gray-200 cursor-pointer" >Create Post</li>
-        
+          <li onClick={()=>navigate('/likedposts')} className="hover:text-gray-200 cursor-pointer" >Liked Posts</li>
           <li onClick={()=>navigate('/dashboard')} className="hover:text-gray-200 cursor-pointer" >Developers</li>
           <li My onClick={()=>navigate('/myposts')} className="hover:text-gray-200 cursor-pointer"> My Posts</li>
           <li className="hover:text-red-600 cursor-pointer" onClick={onCLickLogout}>Logout</li>
@@ -53,7 +53,7 @@ const Navbar = () => {
       <>
          <li onClick={()=>navigate('/posts')} className="hover:text-gray-200  cursor-pointer" >Home</li>
           <li onClick={()=>navigate('/createpost')} className="hover:text-gray-200 cursor-pointer" >Create Post</li>
-          
+          <li onClick={()=>navigate('/likedposts')} className="hover:text-gray-200 cursor-pointer" >Liked Posts</li>
           <li onClick={()=>navigate('/dashboard')} className="hover:text-gray-200 cursor-pointer" >Developers</li>
           <li My onClick={()=>navigate('/myposts')} className="hover:text-gray-200 cursor-pointer"> My Posts</li>
           <li className="hover:text-red-600" onClick={onCLickLogout}>Logout</li>
