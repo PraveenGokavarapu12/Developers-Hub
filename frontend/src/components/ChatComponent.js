@@ -20,7 +20,7 @@ const ChatComponent = ({senderId,receiverId,closeChat,receiverName}) => {
 
         const fetch=async()=>{
           try{
-            const res =await axios.get(`http://localhost:3005/api/chat/${receiverId}`,{
+            const res =await axios.get(`https://lancer-app-praveen.onrender.com/api/chat/${receiverId}`,{
             
               headers:
               { Authorization: `Bearer ${localStorage.getItem("token")}` }
