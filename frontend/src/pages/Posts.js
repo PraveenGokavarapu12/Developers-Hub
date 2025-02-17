@@ -23,13 +23,13 @@ const Posts = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:3005/api/posts", {
+        const res = await axios.get("https://lancer-app-praveen.onrender.com/api/posts", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setData(res.data);
 
         // Fetch liked/disliked posts for the current user
-        const likedRes = await axios.get("http://localhost:3005/api/users/likedposts", {
+        const likedRes = await axios.get("https://lancer-app-praveen.onrender.com/api/users/likedposts", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -62,7 +62,7 @@ const Posts = () => {
     setDislikedPosts((prev) => ({ ...prev, [postId]: false }));
 
     try {
-      await axios.put(`http://localhost:3005/api/users/like/${postId}`, {}, {
+      await axios.put(`https://lancer-app-praveen.onrender.com/api/users/like/${postId}`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
     } catch (err) {

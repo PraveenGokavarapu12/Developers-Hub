@@ -16,7 +16,7 @@ const UserDetails = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get(`http://localhost:3005/api/users/developer/${id}`, {
+        const res = await axios.get(`https://lancer-app-praveen.onrender.com/api/users/developer/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
