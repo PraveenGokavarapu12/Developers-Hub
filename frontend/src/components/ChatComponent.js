@@ -2,7 +2,7 @@ import React, { useEffect, useState ,useRef} from 'react'
 import io from 'socket.io-client'
 import axios from 'axios'
 
-const socket=io('http://localhost:3005')
+const socket=io('https://lancer-app-praveen.onrender.com')
 
 
 
@@ -60,7 +60,7 @@ const ChatComponent = ({senderId,receiverId,closeChat,receiverName}) => {
             socket.emit("sendMessage",{senderId,receiverId,message});
             setMessages(prev=>[...prev,{senderId,message}]);
             
-            await axios.post(`http://localhost:3005/api/chat/send/${receiverId}`,{message},{
+            await axios.post(`https://lancer-app-praveen.onrender.com/api/chat/send/${receiverId}`,{message},{
 
               headers:
                 { Authorization: `Bearer ${localStorage.getItem("token")}` }

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FaUser } from 'react-icons/fa';
 
-import moment from 'moment'
+
 import ChatComponent from '../components/ChatComponent';
 
 
@@ -12,9 +12,11 @@ const UserDetails = () => {
   const { id } = useParams();
   const [data, setData] = useState(null); // Initialize with null to handle loading state
   const [chatOpen, setChatOpen] = useState(false);
+  const [loading,setLoading]=useState(false);
 
   useEffect(() => {
     const fetch = async () => {
+      setLoading(true);
       try {
         const res = await axios.get(`https://lancer-app-praveen.onrender.com/api/users/developer/${id}`, {
           headers: {
@@ -29,6 +31,9 @@ const UserDetails = () => {
       } catch (error) {
         console.error('Error fetching data:', error);
 
+      }
+      finally {
+        setLoading(false);
       }
     };
     fetch();

@@ -44,15 +44,20 @@ const LandingPage = () => {
         </button>
 
         {/* Code Block (Now Responsive) */}
-        <div className="mt-6 bg-[#171732] rounded-lg p-1 text-purple-200 shadow-lg overflow-auto w-full bg-opacity-25 hidden md:inline-block" >
-          <SyntaxHighlighter
-            language="javascript"
-            style={dracula}
-            className="!bg-transparent text-sm md:text-base rounded-lg"
-          >
-            {`console.log("You're now part of the revolution! 🚀");`}
-          </SyntaxHighlighter>
+       <aside className="bg-[#1b1131] text-white p-6 rounded-lg w-full max-w-lg font-mono mt-4">
+      <div className="flex justify-between items-center">
+        <div className="flex space-x-2 text-red-500">
+          <div className="w-3 h-3 rounded-full bg-red-500" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500" />
+          <div className="w-3 h-3 rounded-full bg-green-500" />
         </div>
+        <p className="text-sm">bash</p>
+      </div>
+      <div className="mt-4">
+        <p className="text-yellow-200 text-sm"><span className="text-blue-400">console.log </span>("You're now part of the revolution! 🚀");</p>
+       
+      </div>
+    </aside>
       </div>
 
       {/* Right Image (Hidden on Mobile) */}
