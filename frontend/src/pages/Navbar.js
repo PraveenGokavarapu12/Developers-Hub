@@ -19,7 +19,7 @@ const Navbar = () => {
         {!token ? <ul className="hidden md:flex space-x-6 text-white">
           <li onClick={()=>navigate('/signup')} className="hover:text-gray-200  cursor-pointer" >Signup</li>
           <li onClick={()=>navigate('/login')} className="hover:text-gray-200 cursor-pointer" >Login</li>
-          <li onClick={()=>navigate('/posts')} className="hover:text-gray-200  cursor-pointer" >Posts</li>
+         
          
         </ul> : <ul className="hidden md:flex space-x-6 text-white">
          
@@ -49,7 +49,7 @@ const Navbar = () => {
       <>
         <li onClick={()=>navigate('/signup')} className="hover:text-gray-200  cursor-pointer" >Signup</li>
         <li onClick={()=>navigate('/login')} className="hover:text-gray-200 cursor-pointer" >Login</li>
-        <li onClick={()=>navigate('/posts')} className="hover:text-gray-200  cursor-pointer" >Posts</li>
+       
       </>
     ) : (
       <>
